@@ -2,6 +2,19 @@ import React from "react";
 import './SortingVisualizer.css'
 import * as sortingAlgorithms from '../sortingAlgorithms/sortingAlgorithms.js'
 
+/**
+ * e63946 - red
+ * f1faee - off white
+ * a8dadc - light blue
+ * 457b9d - medium blue
+ * 1d3557 - dark blue
+ */
+
+const ANIMATION_SPEED = 1;
+const SIZE = 100;
+const PRIMARY_COLOUR = '#a8dadc';
+const SECONDARY_COLOUR = '#e63946';
+
 export default class SortingVisualizer extends React.Component {
     constructor(props) {
         super(props);
@@ -23,7 +36,7 @@ export default class SortingVisualizer extends React.Component {
     resetArray() {
         const array = [];
 
-        for (let i = 0; i < 100; i++){
+        for (let i = 0; i < SIZE; i++){
             array.push(randomIntFromInteraval(5, 500));
         }
         this.setState({array});
