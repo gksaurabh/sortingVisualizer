@@ -1,5 +1,6 @@
 import React from "react";
 import './SortingVisualizer.css'
+import * as sortingAlgorithms from '../sortingAlgorithms/sortingAlgorithms.js'
 
 export default class SortingVisualizer extends React.Component {
     constructor(props) {
@@ -29,7 +30,13 @@ export default class SortingVisualizer extends React.Component {
     }
 
     mergeSort() {
+        const jsSortedArray = this.state.array
+            .slice()
+            .sort((a,b) => a - b);
+        
+        const sortedArray = sortingAlgorithms.mergeSort(this.state.array);
 
+        console.log(arraysAreEqual(jsSortedArray, sortedArray));
     }
 
     quickSort() {
@@ -41,7 +48,7 @@ export default class SortingVisualizer extends React.Component {
     }
 
     bubbleSort() {
-        
+
     }
 
     /**
@@ -78,4 +85,18 @@ export default class SortingVisualizer extends React.Component {
      */
 function randomIntFromInteraval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+/*
+*   pass in a sorted array into arrOne and alogrithm applied sorted array to 
+*   check if our sorting algorithm works. 
+*/
+function arraysAreEqual(arrOne, arrTwo) {
+
+    if(arrOne.length != arrTwo.length) return false;
+
+    for (let i = 0; i < arrOne.length; i++){
+        if(arrOne[i] !== arrTwo[i]) return false;
+    }
+    return true;
 }
