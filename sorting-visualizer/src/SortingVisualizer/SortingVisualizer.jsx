@@ -23,9 +23,25 @@ export default class SortingVisualizer extends React.Component {
         const array = [];
 
         for (let i = 0; i < 100; i++){
-            array.push(randomIntFromInteraval(5, 1000));
+            array.push(randomIntFromInteraval(5, 500));
         }
         this.setState({array});
+    }
+
+    mergeSort() {
+
+    }
+
+    quickSort() {
+
+    }
+
+    heapSort() {
+
+    }
+
+    bubbleSort() {
+        
     }
 
     /**
@@ -46,7 +62,10 @@ export default class SortingVisualizer extends React.Component {
                 ))}
                 <div className="button-container">
                     <button onClick={() => this.resetArray()}>Generate New Array</button>
-                    <button>Merge Sort</button>
+                    <button onClick={() => this.mergeSort()}>Merge Sort</button>
+                    <button onClick={() => this.quickSort()}>Quick Sort</button>
+                    <button onClick={() => this.heapSort()}>Heap Sort</button>
+                    <button onClick={() => this.bubbleSort()}>Bubble Sort</button>
                 </div>
                 
             </div>
