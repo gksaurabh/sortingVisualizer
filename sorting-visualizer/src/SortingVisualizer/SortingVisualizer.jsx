@@ -46,7 +46,7 @@ export default class SortingVisualizer extends React.Component {
         const animations = sortingAlgorithms.getMergeSortAnimation(this.state.array);
 
         for (let i = 0; i < animations.length; i++) {
-            const arrayBars = document.getElementById('array-bar');
+            const arrayBars = document.getElementsByClassName('array-bar');
             const isColourChange = i % 3 !== 2;
 
             if (isColourChange) {
@@ -94,7 +94,10 @@ export default class SortingVisualizer extends React.Component {
                     <div 
                         className="array-bar" 
                         key={idx} 
-                        style={{height: `${value}px`}}> 
+                        style={{
+                            height: `${value}px`,
+                            backgroundColor: PRIMARY_COLOUR
+                        }}> 
                     
                     </div>
                 ))}
@@ -122,12 +125,12 @@ function randomIntFromInteraval(min, max) {
 *   pass in a sorted array into arrOne and alogrithm applied sorted array to 
 *   check if our sorting algorithm works. 
 */
-function arraysAreEqual(arrOne, arrTwo) {
+// function arraysAreEqual(arrOne, arrTwo) {
 
-    if(arrOne.length != arrTwo.length) return false;
+//     if(arrOne.length !== arrTwo.length) return false;
 
-    for (let i = 0; i < arrOne.length; i++){
-        if(arrOne[i] !== arrTwo[i]) return false;
-    }
-    return true;
-}
+//     for (let i = 0; i < arrOne.length; i++){
+//         if(arrOne[i] !== arrTwo[i]) return false;
+//     }
+//     return true;
+// }
