@@ -10,8 +10,8 @@ import * as sortingAlgorithms from '../sortingAlgorithms/sortingAlgorithms.js'
  * 1d3557 - dark blue
  */
 
-const ANIMATION_SPEED = 1;
-const SIZE = 100;
+const ANIMATION_SPEED = 3;
+const SIZE = 180;
 const PRIMARY_COLOUR = '#a8dadc';
 const SECONDARY_COLOUR = '#e63946';
 
